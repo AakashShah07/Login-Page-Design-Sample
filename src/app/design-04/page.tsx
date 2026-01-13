@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Plane, Star } from "lucide-react";
+import { Phone, Plane, Star, Users, TrendingUp, Building2 } from "lucide-react";
 import Image from "next/image";
 
 export default function TripSearchLogin() {
@@ -21,17 +21,17 @@ export default function TripSearchLogin() {
               <h2 className="text-xl font-bold text-gray-900 tracking-tight">
                 TripSearch
               </h2>
-              <p className="text-xs text-gray-500">Tour & Travel Platform</p>
+              <p className="text-xs text-gray-500">Operator Portal</p>
             </div>
           </div>
 
           {/* Heading */}
           <div className="space-y-2">
             <h1 className="text-3xl font-bold text-gray-900">
-              Welcome Back!
+              Operator Login
             </h1>
             <p className="text-gray-500">
-              Sign in to discover amazing destinations and book your next adventure.
+              Access your dashboard to manage bookings, inventory, and grow your travel business.
             </p>
           </div>
 
@@ -129,19 +129,25 @@ export default function TripSearchLogin() {
             {/* Stats Row */}
             <div className="flex gap-3">
               <div className="bg-white rounded-xl px-4 py-3 shadow-lg">
-                <p className="text-2xl font-bold text-gray-900">190+</p>
-                <p className="text-xs text-gray-500">Countries</p>
+                <div className="flex items-center gap-1">
+                  <Building2 className="w-5 h-5 text-orange-500" />
+                  <span className="text-2xl font-bold text-gray-900">500+</span>
+                </div>
+                <p className="text-xs text-gray-500">Partner Operators</p>
               </div>
               <div className="bg-white rounded-xl px-4 py-3 shadow-lg">
                 <div className="flex items-center gap-1">
-                  <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
-                  <span className="text-2xl font-bold text-gray-900">4.9</span>
+                  <TrendingUp className="w-5 h-5 text-green-500" />
+                  <span className="text-2xl font-bold text-gray-900">40%</span>
                 </div>
-                <p className="text-xs text-gray-500">User Rating</p>
+                <p className="text-xs text-gray-500">Avg. Growth</p>
               </div>
               <div className="bg-white rounded-xl px-4 py-3 shadow-lg">
-                <p className="text-2xl font-bold text-gray-900">10K+</p>
-                <p className="text-xs text-gray-500">Experiences</p>
+                <div className="flex items-center gap-1">
+                  <Users className="w-5 h-5 text-blue-500" />
+                  <span className="text-2xl font-bold text-gray-900">1M+</span>
+                </div>
+                <p className="text-xs text-gray-500">Customers Served</p>
               </div>
             </div>
 
@@ -149,7 +155,7 @@ export default function TripSearchLogin() {
             <div className="bg-white/15 backdrop-blur-xl rounded-2xl p-5 border border-white/20 max-w-lg">
               <div className="flex items-start gap-4">
                 <div className="w-11 h-11 rounded-full bg-gradient-to-br from-orange-400 to-rose-400 flex items-center justify-center shrink-0">
-                  <span className="text-white font-bold text-sm">SK</span>
+                  <span className="text-white font-bold text-sm">RT</span>
                 </div>
                 <div>
                   <div className="flex items-center gap-1 mb-1">
@@ -158,9 +164,9 @@ export default function TripSearchLogin() {
                     ))}
                   </div>
                   <p className="text-white text-sm leading-relaxed">
-                    &ldquo;TripSearch made booking our Maldives trip so easy! The seaplane experience was unforgettable.&rdquo;
+                    &ldquo;TripSearch transformed our business. We&apos;ve doubled our bookings and streamlined our entire operation.&rdquo;
                   </p>
-                  <p className="text-white/60 text-xs mt-2">Sarah K. — Verified Traveler</p>
+                  <p className="text-white/60 text-xs mt-2">Rajesh T. — Paradise Tours, Mumbai</p>
                 </div>
               </div>
             </div>
@@ -168,13 +174,13 @@ export default function TripSearchLogin() {
             {/* Tagline */}
             <div>
               <h3 className="text-3xl font-bold text-white leading-tight">
-                Discover Your{" "}
+                Grow Your{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-300">
-                  Dream Destination
+                  Travel Business
                 </span>
               </h3>
               <p className="text-white/80 mt-2 text-sm max-w-md">
-                Find and book the best travel experiences worldwide with exclusive deals.
+                Access premium inventory, real-time pricing, and powerful tools to scale your operations.
               </p>
             </div>
           </div>
