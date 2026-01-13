@@ -194,7 +194,7 @@ export default function Design2Page() {
                 {/* Welcome Text */}
                 <div className="text-center mb-8">
                   <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2 italic">
-                    Operator Login
+                    Welcome Back!
                   </h2>
                   <p className="text-sm sm:text-base text-white/60">
                     Access your travel management dashboard
