@@ -1,10 +1,33 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, Phone, ShieldCheck } from "lucide-react";
+import { BadgeCheck, CheckCircle, Lock, Phone, Shield, ShieldCheck } from "lucide-react";
+import Image from "next/image";
 
 export default function LoginPage() {
+  const [vendorCount, setVendorCount] = useState(0);
+
+  useEffect(() => {
+    const target = 750;
+    const duration = 2000;
+    const steps = 60;
+    const increment = target / steps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setVendorCount(target);
+        clearInterval(timer);
+      } else {
+        setVendorCount(Math.floor(current));
+      }
+    }, duration / steps);
+
+    return () => clearInterval(timer);
+  }, []);
   return (
     <div className="relative min-h-dvh w-full overflow-hidden">
       {/* Background Image */}
@@ -20,29 +43,33 @@ export default function LoginPage() {
 
       {/* Main Content */}
       <div className="relative z-20 flex min-h-dvh items-center justify-center px-4 py-6 sm:p-6 md:p-8">
-        <Card className="w-full max-w-[95%] sm:max-w-md bg-white/95 backdrop-blur-sm shadow-2xl border-0 rounded-xl sm:rounded-2xl overflow-hidden">
-          <CardContent className="p-5 sm:p-6 md:p-8">
+        <Card className="w-full max-w-[95%] sm:max-w-md bg-white/95 backdrop-blur-sm shadow-2xl border-0 rounded-2xl sm:rounded-3xl overflow-hidden">
+          <CardContent className="p-4 sm:p-6 md:p-8">
             {/* Logo Section */}
-            <div className="text-center mb-4 sm:mb-6">
-              <div className="flex items-center justify-center gap-2 mb-2">
-                <div className="bg-red-600 text-white font-bold text-lg sm:text-xl px-2 py-1 rounded">
-                  TS
-                </div>
-                <span className="text-xl sm:text-2xl font-bold text-gray-800">
+            <div className="text-center mb-3 sm:mb-5">
+              <div className="flex items-center justify-center gap-2 mb-1.5">
+                <Image
+                  src="/logo-large.jpg"
+                  alt="TS"
+                  width={40}
+                  height={40}
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded object-cover animate-fade-in-up animate-logo-glow"
+                />
+                <span className="text-xl sm:text-2xl font-bold text-gray-800 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                   TripzSearch
                 </span>
               </div>
 
               {/* Verified Badge */}
-              <div className="inline-flex items-center gap-1 text-blue-600 text-xs sm:text-sm">
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 fill-blue-600 text-white" />
+              <div className="inline-flex items-center gap-1 text-blue-600 text-xs sm:text-sm animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 fill-blue-600 text-white animate-gentle-pulse" />
                 <span className="font-medium">Trusted & Verified</span>
               </div>
             </div>
 
             {/* Welcome Text */}
-            <div className="text-center mb-6 sm:mb-8">
-              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
+            <div className="text-center mb-4 sm:mb-6">
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-0.5 sm:mb-1">
                 Welcome
               </h1>
               <p className="text-sm sm:text-base text-gray-600">
@@ -51,11 +78,11 @@ export default function LoginPage() {
             </div>
 
             {/* Sign In Buttons */}
-            <div className="space-y-3 sm:space-y-4">
+            <div className="space-y-2.5 sm:space-y-3">
               {/* Google Button */}
               <Button
                 variant="outline"
-                className="w-full h-11 sm:h-12 text-sm sm:text-base font-medium border-2 border-gray-200 hover:bg-gray-50 rounded-full"
+                className="w-full h-11 sm:h-12 text-sm sm:text-base font-normal text-gray-600 bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 rounded-full transition-all duration-200"
               >
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" viewBox="0 0 24 24">
                   <path
@@ -89,25 +116,43 @@ export default function LoginPage() {
               </div>
 
               {/* Phone Button */}
-              <Button className="w-full h-11 sm:h-12 text-sm sm:text-base font-medium bg-red-500 hover:bg-red-600 text-white rounded-full">
+              <Button
+                className="w-full h-11 sm:h-12 text-sm sm:text-base font-semibold text-white rounded-full shadow-md transition-all duration-200 hover:shadow-lg hover:shadow-red-500/30 hover:-translate-y-0.5 active:scale-[0.98] active:shadow-sm"
+                style={{ backgroundColor: 'rgb(201, 55, 44)' }}
+              >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
                 Sign in with Phone Number
               </Button>
             </div>
 
             {/* Security Badges */}
-            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-100">
-              <div className="flex items-center justify-center gap-3 sm:gap-4">
+            <div className="mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-gray-100">
+              <p className="text-center text-sm sm:text-base text-gray-600 font-medium mb-2.5 sm:mb-3">
+                Trusted by <span className="text-gray-900 font-bold tabular-nums">{vendorCount}+</span> verified vendors
+              </p>
+              <div className="flex items-center justify-center gap-2 sm:gap-3">
                 <div className="flex items-center gap-1 bg-gray-100 px-2 sm:px-3 py-1.5 sm:py-2 rounded-md">
-                  <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
+                  <Shield className="w-4 h-4 sm:w-4 sm:h-4 text-blue-600" />
+                  <span className="text-[10px] sm:text-xs font-bold text-gray-700">
+                    SAFE
+                  </span>
+                </div>
+                <div className="flex items-center gap-1 bg-gray-100 px-2 sm:px-3 py-1.5 sm:py-2 rounded-md">
+                  <Lock className="w-4 h-4 sm:w-4 sm:h-4 text-green-600" />
                   <span className="text-[10px] sm:text-xs font-bold text-gray-700">
                     SECURE
+                  </span>
+                </div>
+                <div className="flex items-center gap-1 bg-gray-100 px-2 sm:px-3 py-1.5 sm:py-2 rounded-md">
+                  <BadgeCheck className="w-4 h-4 sm:w-4 sm:h-4 text-purple-600" />
+                  <span className="text-[10px] sm:text-xs font-bold text-gray-700">
+                    VERIFIED
                   </span>
                 </div>
               </div>
 
               {/* Terms */}
-              <p className="text-center text-[10px] sm:text-xs text-gray-500 mt-3 sm:mt-4 px-2">
+              <p className="text-center text-[10px] sm:text-xs text-gray-500 mt-2.5 sm:mt-3 px-2">
                 By continuing, you agree to our{" "}
                 <a href="#" className="text-gray-700 underline">
                   Terms of Service
