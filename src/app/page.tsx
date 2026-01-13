@@ -61,7 +61,7 @@ export default function LoginPage() {
               </div>
 
               {/* Verified Badge */}
-              <div className="inline-flex items-center gap-1 text-blue-600 text-xs sm:text-sm animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <div className="inline-flex items-center gap-1 text-blue-600 text-xs sm:text-sm animate-fade-in-up animate-badge-glow rounded-full px-2 py-0.5" style={{ animationDelay: '0.4s' }}>
                 <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 fill-blue-600 text-white animate-gentle-pulse" />
                 <span className="font-medium">Trusted & Verified</span>
               </div>
@@ -69,9 +69,13 @@ export default function LoginPage() {
 
             {/* Welcome Text */}
             <div className="text-center mb-4 sm:mb-6">
-              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-0.5 sm:mb-1">
-                Welcome
-              </h1>
+              <p className="text-lg sm:text-xl font-semibold text-gray-800 tracking-tight mb-1">
+                Operator Login
+              </p>
+              {/* Subtle gradient accent line */}
+              <div className="flex justify-center mb-2">
+                <div className="w-12 h-0.5 rounded-full bg-linear-to-r from-transparent via-red-400 to-transparent opacity-60" />
+              </div>
               <p className="text-sm sm:text-base text-gray-600">
                 Sign in or create your account to continue
               </p>
