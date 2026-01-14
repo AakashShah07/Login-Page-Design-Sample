@@ -10,7 +10,7 @@ export default function LoginPage() {
   const [vendorCount, setVendorCount] = useState(0);
 
   useEffect(() => {
-    const target = 750;
+    const target = 200;
     const duration = 2000;
     const steps = 60;
     const increment = target / steps;
@@ -47,15 +47,15 @@ export default function LoginPage() {
           <CardContent className="p-4 sm:p-6 md:p-8">
             {/* Logo Section */}
             <div className="text-center mb-3 sm:mb-5">
-              <div className="flex items-center justify-center gap-2 mb-1.5">
+              <div className="flex flex-col items-center justify-center gap-1.5 mb-1.5">
                 <Image
-                  src="/logo-large.jpg"
+                  src="/logo-small.png"
                   alt="TS"
-                  width={40}
-                  height={40}
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded object-cover animate-fade-in-up animate-logo-glow"
+                  width={60}
+                  height={60}
+                  className="h-12 sm:h-14 w-auto rounded  "
                 />
-                <span className="text-xl sm:text-2xl font-bold text-gray-800 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                <span className="text-xl sm:text-2xl font-bold text-gray-800 " style={{ animationDelay: '0.2s' }}>
                   TripzSearch
                 </span>
               </div>
