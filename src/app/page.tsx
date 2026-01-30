@@ -34,7 +34,7 @@ export default function LoginPage() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/back1.jpg')`,
+          backgroundImage: `url('/mou.jpg')`,
         }}
       >
         {/* Overlay for better readability */}
