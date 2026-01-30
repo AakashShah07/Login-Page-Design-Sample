@@ -34,7 +34,7 @@ export default function LoginPage() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/sign-in.jpg')`,
+          backgroundImage: `url('/back1.jpg')`,
         }}
       >
         {/* Overlay for better readability */}
@@ -43,7 +43,7 @@ export default function LoginPage() {
 
       {/* Main Content */}
       <div className="relative z-20 flex min-h-dvh items-center justify-center px-4 py-6 sm:p-6 md:p-8">
-        <Card className="w-full max-w-[95%] sm:max-w-md bg-white/95 backdrop-blur-sm shadow-2xl border-0 rounded-2xl sm:rounded-3xl overflow-hidden">
+        <Card className="w-full max-w-[95%] sm:max-w-md bg-white/95 shadow-2xl border-0 rounded-2xl sm:rounded-3xl overflow-hidden">
           <CardContent className="p-4 sm:p-6 md:p-8">
             {/* Logo Section */}
             <div className="text-center mb-3 sm:mb-5">
