@@ -32,13 +32,14 @@ export default function LoginPage() {
     <div className="relative min-h-dvh w-full overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
         style={{
-          backgroundImage: `url('/beach_krabi.jpg')`,
+          backgroundImage: `url('/mouta.jpg')`,
+          filter: 'brightness(0.9) contrast(1.1) saturate(1.1)',
         }}
       >
         {/* Overlay for better readability */}
-        <div className="absolute inset-0 bg-black/30 sm:bg-black/20" />
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       {/* Main Content */}
